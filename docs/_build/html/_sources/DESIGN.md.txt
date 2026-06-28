@@ -1,0 +1,23 @@
+# DESIGN: SmartHomeRTOS Prototype
+
+Overview
+
+- Tasks are implemented as independent threads to simulate RTOS tasks.
+- Inter-task communication is via thread-safe queues.
+- Event logging is centralized through a communication task which writes to console and a log file.
+
+Tasks
+
+- SensorTask: emits simulated temperature, motion, door status.
+- ControlTask: consumes sensor data and produces actuator commands.
+- ActuatorTask: applies commands to a simulated actuator state.
+- CommTask: collects events and logs them.
+- UserInputTask: simulates remote user commands.
+
+Configuration
+
+Change behavior in `config/config.json` (intervals, thresholds, random ranges).
+
+Scheduling and priorities
+
+This prototype uses OS threads — to demonstrate priorities and preemption you'd extend the scheduler to simulate priority-based dispatching or use a cooperative scheduling model.

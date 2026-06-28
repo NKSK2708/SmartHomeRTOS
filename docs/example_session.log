@@ -1,0 +1,12 @@
+[12:00:01] [SensorTask] Sensor: {'timestamp': 1700000001.12, 'temperature': 29.8, 'motion': False, 'door_open': False}
+[12:00:01] [ControlTask] Decision: {'actor': 'fan', 'action': 'set', 'value': 0, 'reason': 'temp<= 30.0'}
+[12:00:02] [SensorTask] Sensor: {'timestamp': 1700000002.45, 'temperature': 32.4, 'motion': True, 'door_open': False}
+[12:00:02] [ControlTask] Decision: {'actor': 'fan', 'action': 'set', 'value': 80, 'reason': 'temp>30.0'}
+[12:00:02] [ActuatorTask] Applied {'actor': 'fan', 'action': 'set', 'value': 80} -> {'fan': 80, 'light': 0, 'door_lock': 'locked'}
+[12:00:03] [SensorTask] Sensor: {'timestamp': 1700000003.87, 'temperature': 31.5, 'motion': False, 'door_open': False}
+[12:00:03] [ControlTask] Decision: {'actor': 'fan', 'action': 'set', 'value': 80, 'reason': 'temp>30.0'}
+[12:00:03] [CommTask] Logged event: Fan ON due to temperature >30°C
+
+# Notes:
+# - This log is a small example session demonstrating when the conditional breakpoint in ControlTask would fire (temperature > temp_threshold).
+# - Use it as demo output in README or docs/example_session.log for reproducibility.
